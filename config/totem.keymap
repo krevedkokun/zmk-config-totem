@@ -9,8 +9,23 @@
 #define TVP1 4
 #define TVP2 5
 
+&lt {
+    tapping-term-ms = <210>;
+    quick-tap-ms = <175>;
+    require-prior-idle-ms = <150>;
+    flavor = "balanced";
+    hold-trigger-on-release;
+};
+
 / {
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+
+        caps_word {
+            bindings = <&caps_word>;
+            key-positions = <13 16>;
+        };
+    };
 
     behaviors {
         rhm: rhm {
